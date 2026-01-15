@@ -1,0 +1,13 @@
+{
+  "editor.quickSuggestions": {
+    "strings": true
+  },
+  "tailwindCSS.includeLanguages": {
+    "blade": "html",
+    "blade.php": "html"
+  },
+  "tailwindCSS.experimental.classRegex": [
+    ["class\\s*=\\s*\"([^\"]*)\"", "\"([^\"]*)\""],
+    ["class:\\s*\"([^\"]*)\"", "\"([^\"]*)\""]
+  ]
+}
