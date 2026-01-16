@@ -9,7 +9,7 @@
             Our campus offers modern, safe, and student-friendly facilities that promote academic and co-curricular
             excellence.</p>
         <div class="grid grid-cols-1  gap-4 lg:grid-cols-3 md:grid-cols-2 py-4" id="product-card">
-            <div id="product" class="rounded-lg border border-gray-200">
+            <div id="product" class="rounded-lg border border-gray-200   hover:border-blue-400">
                 <div class="">
                     <img src="/assets/images/faclities/robo.webp" class="w-fit px-4 py-4 ">
                 </div>
@@ -37,7 +37,7 @@
                     </a>
                 </div>
             </div>
-            <div id="product" class="rounded-lg border border-gray-200">
+            <div id="product" class="rounded-lg border border-gray-200  hover:border-blue-400">
                 <div class="">
                     <img src="/assets/images/faclities/games.webp" class="w-fit px-4 py-4 ">
                 </div>
@@ -65,7 +65,7 @@
                     </a>
                 </div>
             </div>
-            <div id="product" class="rounded-lg border border-gray-200">
+            <div id="product" class="rounded-lg border border-gray-200  hover:border-blue-400" ">
                 <div class="">
                     <img src="/assets/images/faclities/inno.webp" class="w-fit px-4 py-4 ">
                 </div>
@@ -93,7 +93,7 @@
                     </a>
                 </div>
             </div>
-            <div id="product" class="rounded-lg border border-gray-200">
+            <div id="product" class="rounded-lg border border-gray-200  hover:border-blue-400">
                 <div class="">
                     <img src="/assets/images/faclities/chem.webp" class="w-fit px-4 py-4 ">
                 </div>
@@ -121,7 +121,7 @@
                     </a>
                 </div>
             </div>
-            <div id="product" class="rounded-lg border border-gray-200">
+            <div id="product" class="rounded-lg border border-gray-200  hover:border-blue-400">
                 <div class="">
                     <img src="/assets/images/faclities/phy.webp" class="w-fit px-4 py-4 ">
                 </div>
@@ -149,7 +149,7 @@
                     </a>
                 </div>
             </div>
-            <div id="product" class="rounded-lg border border-gray-200">
+            <div id="product" class="rounded-lg border border-gray-200  hover:border-blue-400">
                 <div class="">
                     <img src="/assets/images/faclities/computer.webp" class="w-fit px-4 py-4 ">
                 </div>
@@ -177,7 +177,7 @@
                     </a>
                 </div>
             </div>
-            <div id="product" class="rounded-lg border border-gray-200">
+            <div id="product" class="rounded-lg border border-gray-200  hover:border-blue-400">
                 <div class="">
                     <img src="/assets/images/faclities/dance.webp" class="w-fit px-4 py-4 ">
                 </div>
@@ -206,7 +206,7 @@
                     </a>
                 </div>
             </div>
-            <div id="product" class="rounded-lg border border-gray-200">
+            <div id="product" class="rounded-lg border border-gray-200  hover:border-blue-400">
                 <div class="">
                     <img src="/assets/images/faclities/tour1.webp" class="w-fit px-4 py-4 ">
                 </div>
@@ -234,7 +234,7 @@
                     </a>
                 </div>
             </div>
-            <div id="product" class="rounded-lg border border-gray-200">
+            <div id="product" class="rounded-lg border border-gray-200  hover:border-blue-400">
                 <div class="">
                     <img src="/assets/images/faclities/health.jpg" class="w-fit px-4 py-4 ">
                 </div>

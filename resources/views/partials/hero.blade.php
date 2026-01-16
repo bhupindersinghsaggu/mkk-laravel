@@ -59,3 +59,18 @@
         </div>
     </div>
 </section>
+<div class="overflow-hidden bg-sky-50 py-6">
+    <div class="flex w-max animate-marquee gap-16">
+        <span class="flex items-center gap-4 text-2xl md:text-5xl font-semibold">
+            <i class="fa-solid fa-graduation-cap text-red-600"></i> Admission Open: 2026-27
+            <i class="fa-solid fa-graduation-cap text-red-600"></i> Admission Open: 2026-27
+            <i class="fa-solid fa-graduation-cap text-red-600"></i> Admission Open: 2026-27
+            <i class="fa-solid fa-graduation-cap text-red-600"></i> Admission Open: 2026-27
+            <i class="fa-solid fa-graduation-cap text-red-600"></i> Admission Open: 2026-27
+            <i class="fa-solid fa-graduation-cap text-red-600"></i> Admission Open: 2026-27
+            <i class="fa-solid fa-graduation-cap text-red-600"></i> Admission Open: 2026-27
+        </span>
+    </div>
+</div>
+
+

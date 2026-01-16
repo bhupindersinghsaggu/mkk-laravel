@@ -32,11 +32,11 @@
                 </div>
                 <div class="mt-5 flex items-center justify-between ">
                     <div>
-                        <span class="text-lg font-semibold text-gray-500 ">Today’s Enquiries</span>
+                        <span class="text-lg font-semibold text-gray-500 ">Total News</span>
                     </div>
                     <span class="flex items-center gap-1   py-0.5 pl-2 pr-2.5 text-2xl font-bold ">
                         <h3 class=" text-title-sm font-bold  dark:text-white/90 bg-green-100 text-green-700 px-4 py-2 rounded-full h-12 w-12">
-                            {{ \App\Models\Admission::whereDate('created_at', today())->count() }}
+                            {{ \App\Models\News::count() }}
                         </h3>
                     </span>
                 </div>

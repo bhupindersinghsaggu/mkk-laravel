@@ -1,3 +1,180 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@font-face {
+    font-family: 'Lexend';
+    src: url('/fonts/lexend/Lexend-Regular.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Lexend';
+    src: url('/fonts/lexend/Lexend-Medium.ttf') format('truetype');
+    font-weight: 500;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Lexend';
+    src: url('/fonts/lexend/Lexend-SemiBold.ttf') format('truetype');
+    font-weight: 600;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Lexend';
+    src: url('/fonts/lexend/Lexend-Bold.ttf') format('truetype');
+    font-weight: 700;
+    font-style: normal;
+}
+
+
+/* marquee animation */
+@keyframes marquee-x {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(-50%);
+    }
+
+    /* move by half because we duplicate content */
+}
+
+@layer utilities {
+    .animate-marquee {
+        animation: marquee 12s linear infinite;
+    }
+
+    .animate-marquee:hover {
+        animation-play-state: paused;
+    }
+
+    @keyframes marquee {
+        0% {
+            transform: translateX(0);
+        }
+
+        100% {
+            transform: translateX(-50%);
+        }
+    }
+}
+
+
+.marquee-mask {
+    overflow: hidden;
+    position: relative;
+}
+
+.marquee-track {
+    display: flex;
+    gap: 1rem;
+    /* matches Tailwind gap-4 */
+    will-change: transform;
+    animation: marquee-x var(--marquee-speed, 200s) linear infinite;
+}
+
+.marquee-track:hover {
+    animation-play-state: paused;
+    /* pause on hover */
+}
+
+/* Accessibility: respect reduced motion */
+@media (prefers-reduced-motion: reduce) {
+    .marquee-track {
+        animation: none;
+    }
+}
+
+@keyframes marquee {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(-50%);
+    }
+}
+
+.animate-marquee {
+    animation: marquee 18s linear infinite;
+}
+
+/* Hide default Swiper arrow icons */
+.swiper-button-next::after,
+.swiper-button-prev::after {
+    display: none;
+}
+
+/* Custom round gradient arrows */
+.custom-arrow {
+    width: 50px;
+    height: 50px;
+    border-radius: 9999px;
+    background: linear-gradient(to right, #ec4899, #ef4444, #ec4899);
+    border: 2px solid rgba(255, 255, 255, 0.8);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    cursor: pointer;
+
+    /* Glow effect */
+    box-shadow:
+        0 0 10px rgba(236, 72, 153, 0.6),
+        0 0 20px rgba(239, 68, 68, 0.4);
+
+    transition: all 0.3s ease;
+}
+
+/* Icon size */
+.custom-arrow i {
+    font-size: 18px;
+}
+
+/* Hover animation */
+.custom-arrow:hover {
+    transform: scale(1.15);
+    box-shadow:
+        0 0 15px rgba(236, 72, 153, 0.9),
+        0 0 30px rgba(239, 68, 68, 0.7);
+}
+
+/* Position adjustment */
+/* .swiper-button-prev {
+            left: -12px;
+        }
+
+        .swiper-button-next {
+            right: -12px;
+        } */
+
+/* 🔥 Hide arrows on mobile */
+@media (max-width: 640px) {
+
+    .swiper-button-next,
+    .swiper-button-prev {
+        display: none;
+    }
+}
+
+/* Pop-up Animation  */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: scale(0.95);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.animate-fadeIn {
+    animation: fadeIn 0.3s ease-out;
+}

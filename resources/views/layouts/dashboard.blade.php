@@ -68,9 +68,45 @@
                             <li>
                                 <a href="{{ route('admissions.index') }}"
                                     class="block px-3 py-2 text-sm rounded hover:bg-gray-100">
-                                   <i class="fa-solid fa-caret-right"></i>  Add Admission
+                                    <i class="fa-solid fa-caret-right"></i> Add Admission
                                 </a>
                             </li>
+                        </ul>
+                    </li>
+                    <li x-data="{ openSub: false }" class="rounded">
+                        <button @click="openSub = !openSub"
+                            class="w-full flex items-center justify-between px-4 py-2 rounded hover:bg-gray-200">
+                            <div class="flex items-center gap-2">
+                                <i class="fa-solid fa-arrows-down-to-people"></i>
+                                News/Updates
+                            </div>
+                            <i class="fa-solid fa-angle-down transition-transform"
+                                :class="openSub ? 'rotate-180' : ''"></i>
+                        </button>
+
+                        <ul x-show="openSub" x-transition class="ml-4 mt-1 space-y-1 overflow-hidden">
+                            <li>
+                                <a href="{{ route('news.index') }}"
+                                    class="block px-3 py-2 text-sm rounded hover:bg-gray-100">
+                                    <i class="fa-solid fa-caret-right"></i> Add News/Update
+                                </a>
+                            </li>
+                            <li>
+                                <a href="{{ route('admissions.index') }}"
+                                    class="block px-3 py-2 text-sm rounded hover:bg-gray-100">
+                                    <i class="fa-solid fa-caret-right"></i> Add Admission
+                                </a>
+                            </li>
+                            @if (auth()->user()->role === 'admin')
+                                <a href="{{ route('admin.gallery') }}"
+                                    class="flex items-center gap-3 px-4 py-2 rounded-lg
+              hover:bg-gray-100
+              {{ request()->routeIs('admin.gallery*') ? 'bg-blue-100 text-blue-700 font-semibold' : 'text-gray-700' }}">
+                                    <i class="fa-regular fa-image"></i>
+                                    <span>Gallery</span>
+                                </a>
+                            @endif
+
                         </ul>
                     </li>
 

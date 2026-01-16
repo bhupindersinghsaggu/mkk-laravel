@@ -26,7 +26,7 @@
             <div>
                 <div class="">
                     <img src="./assets/images/about-us.webp" loading="lazy" decoding="async" width="600"
-                        height="400" alt="About School">
+                        height="400" alt="About School" class="border border-blue-500 p-4 rounded hover:translate-y-1 ">
 
                 </div>
             </div>

@@ -6,6 +6,8 @@
 
 @include('partials.hero')
 
+@include('partials.latestnews')
+
 @include('partials.about-home')
 
 @include('partials.facilities')

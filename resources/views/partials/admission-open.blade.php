@@ -1,5 +1,5 @@
 <section id="admission-open"
-    class="bg-gradient-to-r from-emerald-600 via-teal-500 to-cyan-400 px-4 py-8 md:px-12  lg:py-16">
+    class="bg-gradient-to-r from-pink-600 via-red-500 to-pink-400 text-white px-4 py-8 md:px-12  lg:py-16">
     <div class="max-w-7xl mx-auto ">
         <h2 class="text-2xl  py-4 md:py-8 mb-4  md:text-5xl font-semibold leading-tight text-center">
             <span class="text-gray-800 mb-3 mt-3 text-3xl lg:text-5xl"> Admission Open For<span class="text-gray-800">
@@ -7,9 +7,9 @@
         </h2>
         <div class="grid grid-cols-1 gap-3 lg:grid-cols-2   overflow-hidden">
             <!-- Left Image -->
-            <div class="hidden lg:block border-r-accent">
+            <div class="hidden lg:block">
                 <img src="./assets/images/admission.webp" alt="Counsellor"
-                    class="max-w-md sm:max-w-lg md:max-w-xl lg:max-w-2xl xl:max-w-3xl rounded-lg">
+                    class="max-w-md sm:max-w-lg md:max-w-xl lg:max-w-2xl xl:max-w-3xl rounded-lg  border border-white p-4">
             </div>
             <!-- Right Form -->
             <div class="text-white">

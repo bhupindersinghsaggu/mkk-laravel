@@ -31,17 +31,20 @@
                 Academic
                 <i class="fa-solid fa-chevron-down text-sm"></i>
             </button>
+
             <!-- Submenu -->
             <div
-                class="absolute top-full left-0 mt-3 w-56 bg-white shadow-lg rounded-lg 
-              opacity-0 invisible group-hover:opacity-300 group-hover:visible 
-              transition-all duration-300 z-50">
-                <a href="#" class="block px-4 py-3 hover:bg-gray-200 rounded-t-lg">Curriculum</a>
-                <a href="#" class="block px-4 py-3 hover:bg-gray-200">Examination</a>
-                <a href="#" class="block px-4 py-3 hover:bg-gray-200">Faculty</a>
-                <a href="#" class="block px-4 py-3 hover:bg-gray-200 rounded-b-lg">Admissions</a>
+                class="absolute top-full left-0 mt-3 w-56 bg-white shadow-lg rounded-lg
+               opacity-0 invisible
+               group-hover:opacity-100 group-hover:visible
+               transition-all duration-200 z-50">
+                <a href="#" class="block px-4 py-3 hover:bg-gray-100 rounded-t-lg">Curriculum</a>
+                <a href="#" class="block px-4 py-3 hover:bg-gray-100">Examination</a>
+                <a href="#" class="block px-4 py-3 hover:bg-gray-100">Faculty</a>
+                <a href="#" class="block px-4 py-3 hover:bg-gray-100 rounded-b-lg">Admissions</a>
             </div>
         </div>
+
         <a href="" class="font-semi-bold hover:text-primary">Facilities</a>
         <a href="" class="font-semi-bold hover:text-primary">Student Corner</a>
     </div>
@@ -75,15 +78,16 @@
 
                 <!-- Mobile Submenu -->
                 <div id="mobile-submenu" class="hidden ml-4 mt-2">
-                    <a href="#" class="block p-2 hover:bg-gray-200 rounded-lg">Curriculum</a>
-                    <a href="#" class="block p-2 hover:bg-gray-200 rounded-lg">Examination</a>
-                    <a href="#" class="block p-2 hover:bg-gray-200 rounded-lg">Faculty</a>
-                    <a href="#" class="block p-2 hover:bg-gray-200 rounded-lg">Admissions</a>
+                    <a href="#" class="block p-2 hover:bg-gray-100 rounded-lg">Curriculum</a>
+                    <a href="#" class="block p-2 hover:bg-gray-100 rounded-lg">Examination</a>
+                    <a href="#" class="block p-2 hover:bg-gray-100 rounded-lg">Faculty</a>
+                    <a href="#" class="block p-2 hover:bg-gray-100 rounded-lg">Admissions</a>
+                    <a href="{{ route('public.news') }}" class="block p-2 hover:bg-gray-100 rounded-lg">Admissions</a>
                 </div>
             </div>
 
-            <a href="#" class="font-semi-bold m-3 p-3 hover:bg-gray-200 block rounded-lg">Facilities</a>
-            <a href="#" class="font-semi-bold m-3 p-3 hover:bg-gray-200 block rounded-lg">Student Corner</a>
+            <a href="#" class="font-semi-bold m-3 p-3 hover:bg-gray-100 block rounded-lg">Facilities</a>
+            <a href="#" class="font-semi-bold m-3 p-3 hover:bg-gray-100 block rounded-lg">Student Corner</a>
         </div>
         <div class="h-[1px] bg-gray-100"></div>
         <button class=" mt-6 flex w-full md:flex gap-2 items-center  px-6 py-4 rounded-lg hover:bg-gray-50">
