@@ -15,7 +15,7 @@
                 <input type="date" name="event_date" class="border p-2 rounded" required>
                 <input type="file" name="image" class="border p-2 rounded" required>
                 <input type="url" name="button_link" placeholder="Button Link (optional)" class="border p-2 rounded">
-                 <input type="description" name="description" placeholder="Button Link (optional)" class="border p-2 rounded">
+                <textarea rows="5" name="description" placeholder="Enter Description" class="border p-2 rounded"></textarea>
             </div>
             <select name="type" class="border p-2 rounded">
                 <option value="event">Event</option>
