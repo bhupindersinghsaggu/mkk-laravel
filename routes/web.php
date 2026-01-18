@@ -35,11 +35,15 @@ Route::get('/events/{event}', function (Event $event) {
     return view('website.event-detail', compact('event'));
 })->name('events.show');
 
+
+// Edit event
 Route::get('/dashboard/events/{event}/edit', [EventController::class, 'edit'])
     ->name('events.edit');
 
+// Update event
 Route::put('/dashboard/events/{event}', [EventController::class, 'update'])
     ->name('events.update');
+
 
 Route::get('/events/{event}', [EventController::class, 'show'])
     ->name('events.show');

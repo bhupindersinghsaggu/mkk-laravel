@@ -45,6 +45,11 @@
                             </td>
                             <td class="p-2 border">{{ $event->title }}</td>
                             <td class="p-2 border">{{ $event->event_date }}</td>
+                            <td class="p-2 border"> <a href="{{ route('events.edit', $event) }}"
+                                    class="text-blue-600 hover:underline">
+                                    Edit
+                                </a></td>
+
                             <td class="p-2 border">
                                 <form method="POST" action="{{ route('events.destroy', $event) }}"
                                     onsubmit="return confirm('Delete this event?')">

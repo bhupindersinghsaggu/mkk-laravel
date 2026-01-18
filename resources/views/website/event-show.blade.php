@@ -27,7 +27,7 @@
     <div class="mb-8">
         <img src="{{ asset('storage/' . $event->image) }}"
              alt="{{ $event->title }}"
-             class="w-full rounded-lg shadow">
+             class="w-50 rounded-lg shadow">
     </div>
 
     <!-- Description -->
