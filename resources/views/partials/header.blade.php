@@ -20,8 +20,8 @@
     </div>
 </header>
 <nav class="p-3 flex items-center max-w-7xl mx-auto ">
-    <a href="#" id="brand" class="flex gap-2 items-center flex-1">
-        <img src="./assets/images/logo.png" class="">
+    <a href="/" id="brand" class="flex gap-2 items-center flex-1">
+        <img src="{{ asset('assets/images/logo.png') }}" class="">
     </a>
     <div id="nav-menu" class="hidden lg:flex gap-12">
         <a href="" class="font-semi-bold hover:text-primary">Home</a>
@@ -59,8 +59,8 @@
     </button>
     <div id="nav-dialog" class="hidden fixed z-10 md:hidden bg-white inset-0 p-3">
         <div id="nav-bar" class="flex justify-between">
-            <a href="#" id="brand" class="flex gap-2 items-center">
-                <img src="./assets/images/logo.png">
+            <a href="/" id="brand" class="flex gap-2 items-center">
+                <img src="{{ asset('assets/images/logo.png') }}">
             </a>
             <button class="p-2 md:hidden" onclick="handleMenu()">
                 <i class="fa-solid fa-xmark text-gray-300"></i>

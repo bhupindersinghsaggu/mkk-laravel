@@ -15,8 +15,12 @@ class AdmissionController extends Controller
     public function index()
     {
         $admissions = Admission::latest()->paginate(10);
-        return view('dashboard.admissions', compact('admissions'));
+
+        $isAdmin = auth()->user()->role === 'admin';
+
+        return view('dashboard.admissions', compact('admissions', 'isAdmin'));
     }
+
 
     /**
      * Store admission enquiry (Public form)

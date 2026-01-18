@@ -14,7 +14,7 @@
         </div>
 
         @foreach ($news as $item)
-            <div class="bg-white p-4 mb-3 rounded shadow flex justify-between">
+            <div class=" max-w-5xl  bg-white p-4 mb-3 rounded shadow flex justify-between">
                 <div>
                     <h3 class="font-semibold">{{ $item->title }}</h3>
                     <p class="text-sm text-gray-600">{{ $item->created_at->format('d M Y') }}</p>
