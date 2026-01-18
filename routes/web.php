@@ -5,7 +5,10 @@ use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\AdmissionController;
 use App\Http\Controllers\NewsController;
 use App\Http\Controllers\GalleryController;
+use App\Http\Controllers\EventController;
+
 use App\Models\News;
+use App\Models\Event;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,10 +16,12 @@ use App\Models\News;
 |--------------------------------------------------------------------------
 */
 
-// Home page with latest news
+// Home page (News + Events)
 Route::get('/', function () {
     $latestNews = News::latest()->take(3)->get();
-    return view('website.home', compact('latestNews'));
+    $events = Event::latest()->take(4)->get();
+
+    return view('website.home', compact('latestNews', 'events'));
 })->name('home');
 
 // Public news page
@@ -25,6 +30,19 @@ Route::get('/news', function () {
     return view('website.news', compact('news'));
 })->name('public.news');
 
+//public Events
+Route::get('/events/{event}', function (Event $event) {
+    return view('website.event-detail', compact('event'));
+})->name('events.show');
+
+Route::get('/dashboard/events/{event}/edit', [EventController::class, 'edit'])
+    ->name('events.edit');
+
+Route::put('/dashboard/events/{event}', [EventController::class, 'update'])
+    ->name('events.update');
+
+Route::get('/events/{event}', [EventController::class, 'show'])
+    ->name('events.show');
 // Public gallery
 Route::get('/gallery', [GalleryController::class, 'index'])
     ->name('gallery');
@@ -67,19 +85,21 @@ Route::middleware(['auth'])->group(function () {
 
 Route::middleware(['auth', 'role:admin'])->group(function () {
 
-    // Admissions (admin full access)
+    // Admissions
     Route::get('/dashboard/admissions', [AdmissionController::class, 'index'])
         ->name('admissions.index');
 
-    Route::patch('/dashboard/admissions/{admission}/status',
-        [AdmissionController::class, 'updateStatus'])
-        ->name('admissions.status');
+    Route::patch(
+        '/dashboard/admissions/{admission}/status',
+        [AdmissionController::class, 'updateStatus']
+    )->name('admissions.status');
 
-    Route::delete('/dashboard/admissions/{admission}',
-        [AdmissionController::class, 'destroy'])
-        ->name('admissions.destroy');
+    Route::delete(
+        '/dashboard/admissions/{admission}',
+        [AdmissionController::class, 'destroy']
+    )->name('admissions.destroy');
 
-    // News (admin)
+    // News
     Route::get('/dashboard/news', [NewsController::class, 'index'])
         ->name('news.index');
 
@@ -92,12 +112,15 @@ Route::middleware(['auth', 'role:admin'])->group(function () {
     Route::delete('/dashboard/news/{news}', [NewsController::class, 'destroy'])
         ->name('news.destroy');
 
-    // Gallery (admin)
-    Route::get('/dashboard/gallery', [GalleryController::class, 'admin'])
-        ->name('admin.gallery');
+    // Events / Achievements
+    Route::get('/dashboard/events', [EventController::class, 'index'])
+        ->name('events.index');
 
-    Route::post('/dashboard/gallery', [GalleryController::class, 'store'])
-        ->name('admin.gallery.store');
+    Route::post('/dashboard/events', [EventController::class, 'store'])
+        ->name('events.store');
+
+    Route::delete('/dashboard/events/{event}', [EventController::class, 'destroy'])
+        ->name('events.destroy');
 });
 
 
@@ -113,11 +136,10 @@ Route::middleware(['auth', 'role:staff'])->group(function () {
         return view('dashboard.staff');
     })->name('staff.dashboard');
 
-    // Staff can view admissions (read-only)
-    Route::get('/dashboard/staff/admissions',
-        [AdmissionController::class, 'index'])
-        ->name('staff.admissions.index');
+    Route::get(
+        '/dashboard/staff/admissions',
+        [AdmissionController::class, 'index']
+    )->name('staff.admissions.index');
 });
-
 
 require __DIR__ . '/auth.php';
