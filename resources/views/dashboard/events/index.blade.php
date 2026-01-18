@@ -15,6 +15,7 @@
                 <input type="date" name="event_date" class="border p-2 rounded" required>
                 <input type="file" name="image" class="border p-2 rounded" required>
                 <input type="url" name="button_link" placeholder="Button Link (optional)" class="border p-2 rounded">
+                 <input type="description" name="description" placeholder="Button Link (optional)" class="border p-2 rounded">
             </div>
             <select name="type" class="border p-2 rounded">
                 <option value="event">Event</option>
@@ -48,7 +49,7 @@
                             <td class="p-2 border"> <a href="{{ route('events.edit', $event) }}"
                                     class="text-blue-600 hover:underline">
                                     Edit
-                                </a></td>
+                                </a>
 
                             <td class="p-2 border">
                                 <form method="POST" action="{{ route('events.destroy', $event) }}"
