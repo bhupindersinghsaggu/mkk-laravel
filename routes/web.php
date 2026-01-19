@@ -16,60 +16,56 @@ use App\Models\Event;
 |--------------------------------------------------------------------------
 */
 
-// Home page (News + Events)
+// ✅ Home Page (Latest News + Latest 4 Events)
 Route::get('/', function () {
-    $latestNews = News::latest()->take(3)->get();
-    $events = Event::latest()->take(4)->get();
+    $latestNews   = News::latest()->take(3)->get();
+    $latestEvents = Event::orderBy('event_date', 'desc')->take(4)->get();
 
-    return view('website.home', compact('latestNews', 'events'));
+    return view('website.home', compact('latestNews', 'latestEvents'));
 })->name('home');
 
-// Public news page
+
+// ✅ Public News Page
 Route::get('/news', function () {
     $news = News::latest()->paginate(10);
     return view('website.news', compact('news'));
 })->name('public.news');
 
-//public Events
-Route::get('/events/{event}', function (Event $event) {
-    return view('website.event-detail', compact('event'));
-})->name('events.show');
+
+// ✅ Public Events List Page (ALL EVENTS)
+Route::get('/events', function () {
+    $events = Event::orderBy('event_date', 'desc')->paginate(12);
+    return view('website.events.index', compact('events'));
+})->name('events.public');
 
 
-// Edit event
-Route::get('/dashboard/events/{event}/edit', [EventController::class, 'edit'])
-    ->name('events.edit');
-
-// Update event
-Route::put('/dashboard/events/{event}', [EventController::class, 'update'])
-    ->name('events.update');
-
-
+// ✅ Event Detail Page
 Route::get('/events/{event}', [EventController::class, 'show'])
     ->name('events.show');
-// Public gallery
+
+
+// ✅ Public Gallery
 Route::get('/gallery', [GalleryController::class, 'index'])
     ->name('gallery');
 
-// Admission enquiry form submit
+
+// ✅ Admission Enquiry
 Route::post('/admission-enquiry', [AdmissionController::class, 'store'])
     ->name('admission.store');
 
 
 /*
 |--------------------------------------------------------------------------
-| Authenticated Routes (ALL logged-in users)
+| Authenticated Routes (All logged-in users)
 |--------------------------------------------------------------------------
 */
 
 Route::middleware(['auth'])->group(function () {
 
-    // Dashboard (shared)
     Route::get('/dashboard', function () {
         return view('dashboard.index');
     })->name('dashboard');
 
-    // Profile
     Route::get('/profile', [ProfileController::class, 'edit'])
         ->name('profile.edit');
 
@@ -93,15 +89,14 @@ Route::middleware(['auth', 'role:admin'])->group(function () {
     Route::get('/dashboard/admissions', [AdmissionController::class, 'index'])
         ->name('admissions.index');
 
-    Route::patch(
-        '/dashboard/admissions/{admission}/status',
+    Route::patch('/dashboard/admissions/{admission}/status',
         [AdmissionController::class, 'updateStatus']
     )->name('admissions.status');
 
-    Route::delete(
-        '/dashboard/admissions/{admission}',
+    Route::delete('/dashboard/admissions/{admission}',
         [AdmissionController::class, 'destroy']
     )->name('admissions.destroy');
+
 
     // News
     Route::get('/dashboard/news', [NewsController::class, 'index'])
@@ -116,12 +111,19 @@ Route::middleware(['auth', 'role:admin'])->group(function () {
     Route::delete('/dashboard/news/{news}', [NewsController::class, 'destroy'])
         ->name('news.destroy');
 
+
     // Events / Achievements
     Route::get('/dashboard/events', [EventController::class, 'index'])
         ->name('events.index');
 
     Route::post('/dashboard/events', [EventController::class, 'store'])
         ->name('events.store');
+
+    Route::get('/dashboard/events/{event}/edit', [EventController::class, 'edit'])
+        ->name('events.edit');
+
+    Route::put('/dashboard/events/{event}', [EventController::class, 'update'])
+        ->name('events.update');
 
     Route::delete('/dashboard/events/{event}', [EventController::class, 'destroy'])
         ->name('events.destroy');
@@ -140,8 +142,7 @@ Route::middleware(['auth', 'role:staff'])->group(function () {
         return view('dashboard.staff');
     })->name('staff.dashboard');
 
-    Route::get(
-        '/dashboard/staff/admissions',
+    Route::get('/dashboard/staff/admissions',
         [AdmissionController::class, 'index']
     )->name('staff.admissions.index');
 });
