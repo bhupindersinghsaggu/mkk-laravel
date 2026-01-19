@@ -123,7 +123,7 @@
     color: white;
     cursor: pointer;
 
-    /* Glow effect */
+   
     box-shadow:
         0 0 10px rgba(236, 72, 153, 0.6),
         0 0 20px rgba(239, 68, 68, 0.4);

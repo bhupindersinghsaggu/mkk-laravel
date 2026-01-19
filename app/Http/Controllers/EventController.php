@@ -101,4 +101,6 @@ class EventController extends Controller
     {
         return view('website.event-show', compact('event'));
     }
+
+    
 }
