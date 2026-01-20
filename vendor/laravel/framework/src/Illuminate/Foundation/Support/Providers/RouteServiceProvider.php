@@ -66,7 +66,6 @@ class RouteServiceProvider extends ServiceProvider
         });
     }
 
-    
     /**
      * Bootstrap any application services.
      *
