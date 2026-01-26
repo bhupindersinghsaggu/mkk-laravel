@@ -26,7 +26,7 @@
                         Admission Open <i class="fa-solid fa-arrow-right"></i>
                     </button>
                     <button
-                        class="px-8 py-3 font-semibold text-xl rounded-lg text-white  border border-white shadow-sm hover:bg-opacity-90">
+                        class="px-8 py-3 font-semibold text-xl rounded-lg text-red-700  border border-white shadow-sm hover:bg-opacity-90">
                         Call Now <i class="fa-solid fa-phone"></i>
                     </button>
                 </div>
