@@ -18,7 +18,6 @@
     'latestEvents' => $latestEvents
 ])
 
-
 @include('partials.student-corner')
 
 @endsection
