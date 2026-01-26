@@ -20,7 +20,7 @@ use App\Models\Event;
 Route::get('/', function () {
     $latestNews   = News::latest()->take(3)->get();
     $latestEvents = Event::orderBy('event_date', 'desc')->take(4)->get();
-    dd('wow');
+   
     return view('website.home', compact('latestNews', 'latestEvents'));
 })->name('home');
 
